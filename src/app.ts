@@ -10,7 +10,8 @@ import {
   enrollmentsRouter,
   ticketsRouter,
   paymentsRouter,
-  hotelsRouter
+  hotelsRouter,
+  booksRouter
 } from '@/routers';
 import { loadEnv, connectDb, disconnectDB } from '@/config';
 
@@ -27,7 +28,8 @@ app
   .use('/enrollments', enrollmentsRouter)
   .use('/tickets', ticketsRouter)
   .use('/payments', paymentsRouter)
-  .use("/hotels", hotelsRouter)
+  .use('/hotels', hotelsRouter)
+  .use('/booking', booksRouter)
   .use(handleApplicationErrors);
 
 export function init(): Promise<Express> {
